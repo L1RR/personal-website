@@ -1,0 +1,39 @@
+<script>
+    function validate(){
+      var n=document.getElementById("name1").value;
+      var e=document.getElementById("email").value;
+      var p=document.getElementById("phone").value;
+      var m=document.getElementById("message").value;
+      var atp=e.indexOf("@")
+      var dtp=e.indexOf(".")
+      if(n==null||n==""){
+        document.getElementById("error").innerHTML=("Enter a Name,Not Submitted")
+        return false
+  
+      }
+      else if(e==null||e==""){
+        document.getElementById("error").innerHTML=("Enter Email ID,Not Submitted")
+        return false
+      }
+      
+      else if (atp<1||dtp<atp+2||dtp+2>n.lenght){
+        document.getElementById("error").innerHTML=("Enter Valid Email,Not Submitted")
+        return false
+      }
+      else if (p==null||p==""){
+        document.getElementById("error").innerHTML=("Enter Phone Number,Not Submitted")
+        return false
+      }
+      else if(isNaN(p)){
+        document.getElementById("error").innerHTML=("Please only enter numeric characters ,Not Submitted")
+        return false
+      }
+      else if(m==null||m==""){
+        document.getElementById("error").innerHTML=("Please type a message,Not Submitted")
+        return false
+      }else{
+        return true
+      } 
+    }
+    
+    </script>
